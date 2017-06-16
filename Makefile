@@ -1,4 +1,4 @@
-NAME    = txtw
+NAME    = txth
 VERSION = 0.4
 
 CC      ?= gcc

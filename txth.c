@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <cairo/cairo.h>
-#include "txtw.h"
+#include "txth.h"
 
 int text_width(char *font_family, int font_size, char *s) {
     cairo_surface_t *surface = cairo_image_surface_create(CAIRO_FORMAT_RGB24, 1, 1);
@@ -13,10 +13,10 @@ int text_width(char *font_family, int font_size, char *s) {
     cairo_select_font_face(cr, font_family, CAIRO_FONT_SLANT_NORMAL, CAIRO_FONT_WEIGHT_NORMAL);
     cairo_set_font_size(cr, font_size);
     cairo_text_extents(cr, s, &te);
-    int width = te.x_advance;
+    int height = te.height;
     cairo_destroy(cr);
     cairo_surface_destroy(surface);
-    return width;
+    return height;
 }
 
 int main(int argc, char *argv[]) {

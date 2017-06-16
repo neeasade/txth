@@ -1,1 +1,1 @@
-txtw.o: txtw.c txtw.h
+txth.o: txth.c txth.h
